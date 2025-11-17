@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.Header h1, h3{
+    text-align: center;
+}
+
+.Header {
+    padding-bottom: 50px;
+}
+
+.Sliders {
+    text-align: center;
+}
