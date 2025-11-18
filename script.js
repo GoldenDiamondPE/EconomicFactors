@@ -19,3 +19,18 @@ sliders.forEach((slider, index) => {
         slider.value = val;
     });
 });
+
+
+document.querySelectorAll(".RivalryAmongExistingCompetitors").forEach(section => {
+    section.addEventListener("click", () => {
+        const definition = section.querySelector(".definition");
+        definition.classList.toggle("active");
+    });
+});
+
+document.querySelectorAll(".ThreatOfNewEntrants").forEach(section => {
+    section.addEventListener("click", () => {
+        const definition = section.querySelector(".definition");
+        definition.classList.toggle("active");
+    });
+});

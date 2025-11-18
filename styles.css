@@ -1,9 +1,10 @@
 body {
-    background-color: black;
+    background-color: rgb(28, 28, 28);
     color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.Header h1, h3{
+.Header h1, h3 {
     text-align: center;
 }
 
@@ -11,6 +12,81 @@ body {
     padding-bottom: 50px;
 }
 
-.Sliders {
+.MajorFactorSliders,
+.MinorFactorsSliders {
     text-align: center;
 }
+
+.definition {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    background-color: #222;
+    color: white;
+    padding: 0 10px; /* padding left/right only at first */
+    border-radius: 8px;
+    width: 50%;
+    margin: 8px auto 0 auto;
+
+    transition: 
+        max-height 1.5s ease,
+        opacity 0.3s ease,
+        padding 0.4s ease; 
+}
+
+.definition.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.numberBox {
+    padding-bottom: 5px;
+    text-align: center;
+}
+.slider{
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.RivalryAmongExistingCompetitors,
+.ThreatOfNewEntrants,
+.BargainingPowerOfBuyers,
+.ThreatOfSubstitutes,
+.BargainingPowerOfSuppliers,
+.Political,
+.Economic,
+.Socio-Cultural,
+.Technological,
+.Ecological,
+.Legal{
+    padding-bottom: 25px;
+}
+
+/*
+.RivalryAmongExistingCompetitors:hover .definition,
+.ThreatOfNewEntrants:hover .definition,
+.BargainingPowerOfBuyers:hover .definition,
+.ThreatOfSubstitutes:hover .definition,
+.BargainingPowerOfSuppliers:hover .definition,
+.Political:hover .definition,
+.Economic:hover .definition,
+.Socio-Cultural:hover .definition,
+.Technological:hover .definition,
+.Ecological:hover .definition,
+.Legal:hover .definition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 3px solid green;
+    width: 900px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+
+
+}
+
+*/
