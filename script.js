@@ -21,14 +21,7 @@ sliders.forEach((slider, index) => {
 });
 
 
-document.querySelectorAll(".RivalryAmongExistingCompetitors").forEach(section => {
-    section.addEventListener("click", () => {
-        const definition = section.querySelector(".definition");
-        definition.classList.toggle("active");
-    });
-});
-
-document.querySelectorAll(".ThreatOfNewEntrants").forEach(section => {
+document.querySelectorAll(".RivalryAmongExistingCompetitors, .ThreatOfNewEntrants, .BargainingPowerOfBuyers, .ThreatOfSubstitutes, .BargainingPowerOfSuppliers, .Legal, .Ecological, .Technological, .Socio-Cultural, .Economic, .Political").forEach(section => {
     section.addEventListener("click", () => {
         const definition = section.querySelector(".definition");
         definition.classList.toggle("active");
