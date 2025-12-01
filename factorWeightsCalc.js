@@ -1,5 +1,6 @@
 const sliders = document.querySelectorAll(".slider");
 const numberBoxes = document.querySelectorAll(".numberBox");
+let numberTotal = 0;
 
 sliders.forEach((slider, index) => {
     const numberBox = numberBoxes[index];
@@ -18,14 +19,24 @@ sliders.forEach((slider, index) => {
         numberBox.value = val;
         slider.value = val;
     });
+
+    numberTotal += numberBox.value;
+    
 });
 
-document.querySelectorAll(".Political label, .Economic label, .Socio-Cultural label, .Technological label, \
-    .Ecological label, .Legal label, .RivalryAmongExistingCompetitors label, .ThreatOfNewEntrants label, \
-     .BargainingPowerOfBuyers label, .ThreatOfSubstitutes label, .BargainingPowerOfSuppliers label").forEach(label => {
-    label.addEventListener("click", () => {
-        const section = label.parentElement;
-        const definition = section.querySelector(".definition");
-        definition.classList.toggle("active");
-    });
+
+sliders.forEach((slider, index) => {
+    const numberBox = numberBoxes[index];
+    numberTotal += numberBox.value;
+    console.log(numberTotal);
 });
+
+/*
+
+For each box, add to total
+
+if click button
+    from total check to see if greater than 100
+
+
+*/

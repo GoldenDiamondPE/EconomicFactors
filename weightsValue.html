@@ -6,13 +6,12 @@
         <title>Economic Factors</title>
         <link rel="stylesheet" href="styles.css">
     </head>
-
     <body>
         <section class="Header">
-            <h1>Economic Factor Calculator</h1>
+            <h1>Adjust Weighted Values</h1>
             <h3>By Brandon Bula</h3>
-            <a href="weightsValue.html">Adjust Weights</a>
-        </section>    
+            <a href="index.html">Return To Main Menu</a>
+        </section>
 
         <section class ="Sliders">
             <section class="MinorFactorsSliders">
@@ -136,30 +135,6 @@
             </section>
         </section>
 
-        <input type="button" class="button" value="Calculate">
-        <div class="Results">
-        </div>
-
-
-        <button onclick="clickCounter()" type="button">Click me!</button>
-        <p id="result"></p>
-
-        <script>
-            function clickCounter() {
-            const x = document.getElementById("result");
-            if (typeof(Storage) !== "undefined") {
-                if (localStorage.clickcount) {
-                localStorage.clickcount = Number(localStorage.clickcount)+1;
-                } else {
-                localStorage.clickcount = 1;
-                }
-                x.innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s)!";
-            } else {
-                x.innerHTML = "Sorry, no Web storage support!";
-            }
-            }
-        </script>
-
-        <script src="script.js"></script> 
+        <script src="factorWeightsCalc.js"></script>
     </body>
 </html>
