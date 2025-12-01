@@ -12,7 +12,13 @@
             <h1>Economic Factor Calculator</h1>
             <h3>By Brandon Bula</h3>
             <a href="weightsValue.html">Adjust Weights</a>
-        </section>    
+            <br>
+            <p1>Target to Reach</p1>
+            <br>
+            <input type="number" class="targetToReach" min="0" max="100" value="50">
+            <br>
+            <p1 id="valueComparedToTarget"></p1>
+        </section>
 
         <section class ="Sliders">
             <section class="MinorFactorsSliders">
@@ -83,7 +89,7 @@
                 </div>
                 <div class="ThreatOfSubstitutes">
                     <label>Threat of Substitutes:</label>
-                    <input type="range" class="slider" min="0" max="100" value="50">
+                    <input id="ThreatOfSubstitutes" type="range" class="slider" min="0" max="100" value="50">
                     <input type="number" class="numberBox" min="0" max="100" value="50">
                     <div class="definition">
                         The threat from substitutes is high when alternative offerings
@@ -136,29 +142,12 @@
             </section>
         </section>
 
-        <input type="button" class="button" value="Calculate">
-        <div class="Results">
-        </div>
+        
+        <div class="Results"></div>
 
 
-        <button onclick="clickCounter()" type="button">Click me!</button>
         <p id="result"></p>
-
-        <script>
-            function clickCounter() {
-            const x = document.getElementById("result");
-            if (typeof(Storage) !== "undefined") {
-                if (localStorage.clickcount) {
-                localStorage.clickcount = Number(localStorage.clickcount)+1;
-                } else {
-                localStorage.clickcount = 1;
-                }
-                x.innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s)!";
-            } else {
-                x.innerHTML = "Sorry, no Web storage support!";
-            }
-            }
-        </script>
+        <input type="button" class="button" value="Calculate" onclick="reachTargets()">
 
         <script src="script.js"></script> 
     </body>

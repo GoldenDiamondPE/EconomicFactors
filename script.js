@@ -29,3 +29,29 @@ document.querySelectorAll(".Political label, .Economic label, .Socio-Cultural la
         definition.classList.toggle("active");
     });
 });
+
+function reachTargets() {
+    let majorFactorSum = 0;
+    let minorFactorSum = 0;
+
+    // Sum major factors
+    document.querySelectorAll(".MajorFactorSliders .numberBox").forEach(input => {
+        majorFactorSum += Number(input.value);
+    });
+    majorFactorSum *= 0.16;
+
+    // Sum minor factors
+    document.querySelectorAll(".MinorFactorsSliders .numberBox").forEach(input => {
+        minorFactorSum += Number(input.value);
+    });
+    minorFactorSum *= 1/30;
+
+    // Combined factor
+    let totalFactorValue = majorFactorSum + minorFactorSum;
+
+    const targetValue = Number(document.querySelector(".targetToReach").value);
+
+    const result = targetValue / totalFactorValue * 100;
+
+    document.getElementById("valueComparedToTarget").textContent = result.toFixed(2);
+}
