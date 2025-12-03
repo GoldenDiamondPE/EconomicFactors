@@ -12,11 +12,8 @@
             <h1>Economic Factor Calculator</h1>
             <h3>By Brandon Bula</h3>
             <a href="weightsValue.html">Adjust Weights</a>
-            <br>
             <p1>Target to Reach</p1>
-            <br>
             <input type="number" class="targetToReach" min="0" max="100" value="50">
-            <br>
             <p1 id="valueComparedToTarget"></p1>
         </section>
 
@@ -143,11 +140,13 @@
         </section>
 
         
-        <div class="Results"></div>
+        <section class="Results">
+            <p id="result"></p>
+            <input type="button" class="button" value="Calculate" onclick="reachTarget()">
+        </section>
 
 
-        <p id="result"></p>
-        <input type="button" class="button" value="Calculate" onclick="reachTargets()">
+        
 
         <script src="script.js"></script> 
     </body>

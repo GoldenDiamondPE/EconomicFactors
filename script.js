@@ -30,28 +30,34 @@ document.querySelectorAll(".Political label, .Economic label, .Socio-Cultural la
     });
 });
 
-function reachTargets() {
-    let majorFactorSum = 0;
-    let minorFactorSum = 0;
-
-    // Sum major factors
-    document.querySelectorAll(".MajorFactorSliders .numberBox").forEach(input => {
-        majorFactorSum += Number(input.value);
-    });
-    majorFactorSum *= 0.16;
-
-    // Sum minor factors
-    document.querySelectorAll(".MinorFactorsSliders .numberBox").forEach(input => {
-        minorFactorSum += Number(input.value);
-    });
-    minorFactorSum *= 1/30;
-
-    // Combined factor
-    let totalFactorValue = majorFactorSum + minorFactorSum;
-
+function reachTarget() {
     const targetValue = Number(document.querySelector(".targetToReach").value);
 
-    const result = targetValue / totalFactorValue * 100;
+    // Collect major and minor inputs
+    const majorInputs = document.querySelectorAll(".MajorFactorSliders .numberBox");
+    const minorInputs = document.querySelectorAll(".MinorFactorsSliders .numberBox");
+
+    // Sum values
+    let majorSum = 0;
+    majorInputs.forEach(input => majorSum += Number(input.value));
+
+    let minorSum = 0;
+    minorInputs.forEach(input => minorSum += Number(input.value));
+
+    // Max possible values
+    const majorMax = majorInputs.length * 100;
+    const minorMax = minorInputs.length * 100;
+
+    // Scale to 80% major, 20% minor
+    const majorScaled = (majorSum / majorMax) * 0.80;
+    const minorScaled = (minorSum / minorMax) * 0.20;
+
+    // Combined factor (max 1.0 total)
+    const totalFactorValue = majorScaled + minorScaled;
+
+    // Compare against target
+    const result = totalFactorValue * targetValue;
+
 
     document.getElementById("valueComparedToTarget").textContent = result.toFixed(2);
 }

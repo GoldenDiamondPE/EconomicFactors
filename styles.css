@@ -9,9 +9,12 @@ body {
     padding-bottom: 25px;
 }
 
+.Results{
+    margin: 50px;
+    color: blue;
+}
+
 .Sliders {
-    border-style: solid;
-    border-color: red;
     padding-bottom: 5px;
 }
 
@@ -88,9 +91,9 @@ body {
     cursor: pointer;
     border-radius: 10px;
     margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
